@@ -1,0 +1,16 @@
+{
+  "welcome_to": " خوش آمدید به",
+  "rialino":"ریالینو",
+  "login":"ورود",
+  "do_not_have_an_account":"اکانت ندارید؟",
+  "register":"ثبت نام ",
+  "email":"ایمیل",
+  "password":"رمز عبور",
+  "remember_me":"مرا به یاد داشته باش",
+  "forget_password":"رمز عبور خود را فراموش کردید؟ ",
+  "proccessing":"در حال دریافت اطلاعات...",
+  "login_successfully":"شما با موفقیت وارد شدید.",
+  "email_format_not_valid":"فرمت ایمیل وارد شده صحیح نیست!",
+  "email_required":"وارد کردن ایمیل الزامیست!",
+  "password_required":"وارد کردن رمز عبور الزامیست!"
+}

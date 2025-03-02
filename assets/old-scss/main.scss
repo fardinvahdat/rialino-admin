@@ -1,0 +1,10 @@
+@import "./fonts";
+@import "./variables";
+@import "./utilities";
+@import "./smsPanel";
+@import "./dev7";
+@import "./dev17";
+
+.select-box.el-select .el-input.is-focus .el-input__wrapper {
+    box-shadow: 0 0 0 1.5px $PrimaryW1 inset !important;
+}

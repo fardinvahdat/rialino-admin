@@ -1,0 +1,393 @@
+.turn-rating {
+  .Inserting-New-Day {
+    max-width: 750px;
+
+    .form-item {
+      .filters {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background-color: $GrayB8;
+        gap: 20px;
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .label {
+            margin: 0;
+            color: $GrayB2;
+          }
+
+          .input {
+            .el-input {
+              background-color: transparent;
+              width: 100px;
+
+              .el-input__wrapper {
+                background: none;
+              }
+
+              input {
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        .primary {
+          padding: 10px 20px;
+          height: 35px;
+          min-width: 0;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+      }
+    }
+
+    .days-table {
+      height: 250px;
+      margin-top: 20px;
+      overflow: auto;
+      display: flex;
+      align-items: flex-start;
+
+      hr {
+        border: none;
+        border-bottom: 1px solid $GrayB7;
+      }
+
+      .days {
+        display: grid;
+        gap: 5px;
+        border-right: 1px solid $GrayB7;
+
+        .title {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 120px;
+          height: 40px;
+          font-size: 16px;
+          font-weight: 600;
+          color: $GrayB2;
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+
+      .values {
+        display: grid;
+        gap: 5px;
+        flex-grow: 1;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        .item {
+          display: flex;
+          align-items: center;
+          height: 40px;
+          padding: 0 10px;
+          flex-grow: 1;
+          gap: 15px;
+          white-space: nowrap;
+
+          > span {
+            padding: 3px 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background-color: $GrayB8;
+            color: $PrimaryW1;
+            border-radius: 40px;
+            font-size: 10px;
+
+            button {
+              padding: 0;
+              border: none;
+
+              svg {
+                width: 15px;
+                height: 15px;
+                fill: $PrimaryW1;
+
+                > * {
+                  stroke: $GrayB10;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.reports-mobile-reports, .reports-sms-reports {
+  .filters {
+    gap: 15px;
+
+    .form-item {
+      width: 25%;
+
+      input {
+        width: calc(100% - 20px);
+        padding: 10px;
+        border-radius: 10px;
+        outline: none;
+        border: 2px solid $GrayB7;
+        height: 18px;
+      }
+
+      .el-input {
+        width: 100%;
+
+        .el-input__wrapper {
+          border-radius: 10px;
+          outline: none;
+          border: 2px solid $GrayB7;
+          box-shadow: none;
+
+          input {
+            border: none;
+          }
+
+          .el-icon {
+            font-size: 18px;
+          }
+        }
+      }
+
+      .el-date-editor {
+        .el-input__wrapper {
+          height: 37px;
+          flex-direction: row-reverse;
+        }
+      }
+
+      .confirm-button {
+        display: flex;
+        align-items: center;
+        width: 80px;
+        gap: 10px;
+        min-width: 0;
+
+        svg {
+          width: 18px;
+          height: 18px;
+
+          > * {
+            stroke: currentColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+.reports-function {
+  .body {
+    display: grid;
+    gap: 15px;
+
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      h2 {
+        color: $GrayB2;
+        font-weight: 500;
+        font-size: 14px;
+      }
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid $GrayB7;
+    }
+  }
+}
+
+.labratory-password-recovery {
+  .body {
+    display: grid;
+    gap: 20px;
+
+    .option {
+      button {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: $PrimaryW1;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+      }
+    }
+
+    .alert {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      border: 2px solid $PrimaryB1;
+      gap: 10px;
+      border-radius: 10px;
+      color: $PrimaryB1;
+      background-color: $PrimaryW4;
+
+      svg {
+        > * {
+          stroke: $PrimaryB1;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+
+    .items {
+      display: flex;
+      align-items: center;
+
+      .item {
+        padding: 15px 25px;
+        border: 1px solid $GrayB7;
+        border-radius: 10px;
+
+        img {
+          margin: 0 auto;
+        }
+
+        p {
+          text-align: center;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+.labratory-contacts-form {
+  .body {
+    display: grid;
+    gap: 30px;
+
+    .form-item {
+      .code {
+        font-size: 14px;
+        color: black;
+      }
+
+      textarea {
+        width: 450px;
+      }
+
+      .alert {
+        padding: 10px 15px;
+        border-radius: 10px;
+
+        &.success {
+          border: 2px solid #0C7103;
+          background-color: #16990A0D;
+
+          > * {
+            font-size: 14px;
+            line-height: 24px;
+            color: #0C7103;
+          }
+        }
+      }
+
+      &.code-example {
+        input {
+          width: 100%;
+          padding: 10px 15px;
+          border: 1px solid $GrayB7;
+          border-radius: 10px;
+          outline: none;
+        }
+      }
+
+      &.items {
+        display: flex;
+        align-items: start;
+        gap: 15px;
+
+        .item {
+          padding: 15px 20px;
+          border-radius: 10px;
+          border: 1px solid $GrayB7;
+          p {
+            font-size: 14px;
+            font-weight: 500;
+            color: $GrayB2;
+            text-align: center;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+.new-recive-web-service-dialog {
+  .el-collapse {
+    .el-collapse-item__header.is-active {
+      display: none;
+    }
+  }
+}
+.send-web-service,.labratory-login-fourm, .labratory-online-registration {
+  .body {
+    .title {
+      font-size: 18px;
+      color: $GrayB2;
+    }
+    .items {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      .item {
+        padding: 20px 25px;
+        border-radius: 10px;
+        border: 1px solid $GrayB7;
+        img {
+          margin: 0 auto;
+        }
+        p {
+          font-size: 14px;
+          margin-top: 25px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+.reports-graphic-reports {
+  .body {
+    width: 100%;
+
+    .new-send-dialog {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .graphic-report-chart {
+      .el-input {
+        width: 100%;
+
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

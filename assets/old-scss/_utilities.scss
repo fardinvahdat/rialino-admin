@@ -1,0 +1,857 @@
+@use "variables";
+a {
+  text-decoration: none;
+  color: unset;
+}
+input {
+  font-size: $SmSize;
+  color: $GrayB2 !important;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+textarea {
+  font-family: "BR-L" !important;
+  font-weight: 500;
+  color: $GrayB2;
+}
+
+//global classes
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.d-flex {
+  display: flex;
+}
+.flex-row {
+  flex-direction: row;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.align-items-center {
+  align-items: center;
+}
+.w-100 {
+  width: 100%;
+}
+.w-50 {
+  width: 50%;
+}
+.w-25 {
+  width: 25%;
+}
+.w-75 {
+  width: 75%;
+}
+.g-20 {
+  gap: 20px;
+}
+.g-8 {
+  gap: 8px;
+}
+.g-0 {
+  gap: 0 !important;
+}
+.w-837 {
+  max-width: 837px;
+  width: calc(100% - 32px);
+}
+.fix-wrapper {
+  @media (max-width: 1024px) {
+    position: absolute !important;
+    right: 0;
+    top: 90px;
+    max-height: calc(100vh - 90px);
+    overflow-y: hidden !important;
+  }
+}
+.pointer {
+  cursor: pointer;
+}
+.position-relative {
+  position: relative;
+}
+.el-time-spinner__item {
+  text-align: center;
+}
+button.none {
+  background: none !important;
+  border: none;
+  outline: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+//el styles
+
+button.primary {
+  background: $PrimaryW1;
+  color: $GrayB10;
+  border: none;
+  outline: none;
+  padding: 14px;
+  border-radius: 8px;
+  height: 42px;
+  min-width: 160px;
+  text-align: center;
+  cursor: pointer;
+  &.cancel {
+    color: $PrimaryW1;
+    background: $GrayB8 !important;
+  }
+  &:disabled {
+    background: $GrayB6 !important;
+  }
+}
+button.danger {
+  background: $ErrorB2;
+  color: $GrayB10;
+  border: none;
+  outline: none;
+  padding: 14px;
+  border-radius: 8px;
+  height: 42px;
+  min-width: 160px;
+  text-align: center;
+  cursor: pointer;
+  &.cancel {
+    color: $ErrorB2;
+    background: $GrayB8 !important;
+  }
+  &:disabled {
+    background: $GrayB6 !important;
+  }
+}
+
+.el-checkbox {
+  display: flex !important;
+  .el-checkbox__label {
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    line-height: 20px !important;
+    color: $GrayB2 !important;
+    white-space: normal;
+    @media (max-width: 768px) {
+      font-size: 13px !important;
+    }
+  }
+
+  .el-checkbox__input .el-checkbox__inner {
+    height: 20px !important;
+    width: 20px !important;
+    display: flex;
+    border-radius: 4px;
+  }
+
+  .el-checkbox__input.is-checked .el-checkbox__inner {
+    background-color: $PrimaryW1 !important;
+    border-color: $PrimaryW1 !important;
+    &::after {
+      height: 11px !important;
+      left: 6px !important;
+      width: 5px !important;
+    }
+  }
+}
+
+.table {
+  .el-table__header-wrapper {
+    overflow-x: hidden;
+  }
+  .el-table__header {
+    background-color: $GrayB8;
+    padding: 11px 0;
+    border-radius: 10px;
+    height: 54px;
+    th {
+      background-color: $GrayB8;
+      .cell {
+        text-align: center;
+        font-size: $SmSize;
+        font-weight: 700;
+        font-family: "BR-L" !important;
+        @media (max-width: 768px) {
+          font-size: $XsSize;
+        }
+      }
+    }
+  }
+  .el-table__body-wrapper {
+    tr {
+      height: 80px;
+      td {
+        .cell {
+          text-align: center;
+          font-size: $SmSize;
+          font-family: "BR-L" !important;
+          font-weight: 500;
+          @media (max-width: 768px) {
+            font-size: 12px;
+          }
+        }
+        &:last-child {
+          .cell {
+            padding-right: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.el-radio-group {
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 44px;
+  gap: 13px;
+
+  .el-radio__input.is-checked .el-radio__inner {
+    background-color: $GrayB10;
+    border: 1px solid $PrimaryW1;
+
+    &:after {
+      width: 14px;
+      height: 14px;
+      background-color: $PrimaryW1;
+    }
+  }
+  .el-radio__inner {
+    height: 20px;
+    width: 20px;
+  }
+  .el-radio__label {
+    font-weight: 500;
+    font-size: $MdSize;
+    line-height: 20px;
+    color: $GrayB2;
+    white-space: normal;
+    @media (max-width: 768px) {
+      font-size: 13px !important;
+    }
+  }
+}
+
+.select-box,
+.date-picker {
+  height: 40px;
+  max-height: 40px;
+  .el-input__wrapper {
+    box-shadow: 0 0 0 1.5px $GrayB7 inset;
+    border-radius: 10px;
+    height: 40px;
+  }
+  &.el-select .el-input.is-focus {
+    box-shadow: 0 0 0 1.5px $PrimaryW1 inset !important;
+    border-radius: 10px;
+  }
+  &.el-select .el-input__wrapper.is-focus {
+    box-shadow: 0 0 0 1.5px $GrayB7 inset;
+  }
+}
+.date-picker,
+.send-due-dialog .time-picker {
+  .el-input__wrapper {
+    flex-direction: row-reverse;
+    .el-input__prefix {
+      svg {
+        height: 20px;
+      }
+    }
+    .el-icon {
+      font-size: 20px;
+    }
+  }
+}
+
+.input {
+  .el-input__wrapper {
+    border-radius: 10px;
+    height: 42px;
+    box-shadow: 0 0 0 1.5px $GrayB7 inset;
+  }
+}
+
+.action-bar-table {
+  margin-bottom: 30px;
+  button {
+    font-weight: 500;
+    font-size: $MdSize;
+    line-height: 20px;
+    color: $PrimaryW1;
+    border: 2px solid $PrimaryW1;
+    text-align: center;
+    border-radius: 10px;
+    background-color: $GrayB10;
+    cursor: pointer;
+    width: 174px;
+    min-width: 174px;
+    height: 42px;
+    @media (max-width: 768px) {
+      font-size: 13px !important;
+    }
+  }
+  .el-input {
+    height: 42px;
+    margin: 0 !important;
+    margin-left: 24px !important;
+    width: 598px;
+    @media (max-width: 850px) {
+      margin-left: 6px !important;
+      margin-right: 6px !important;
+      max-width: 598px;
+      width: 100%;
+    }
+    .el-input__wrapper {
+      border-radius: 10px;
+      box-shadow: 0 0 0 1px $GrayB7 inset;
+      .el-input__prefix,
+      .el-input__suffix {
+        svg {
+          height: 24px;
+
+          @media (max-width: 768px) {
+            height: 15px;
+          }
+        }
+        .filter {
+          svg {
+            position: relative;
+            top: 5px;
+          }
+        }
+      }
+      .el-icon {
+        font-size: 24px;
+      }
+    }
+  }
+  svg {
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+      height: 20px;
+    }
+  }
+  .form-item {
+    .el-input {
+      height: 42px;
+      margin: 0 !important;
+      width: 480px;
+      @media (max-width: 850px) {
+        margin-left: 6px !important;
+        margin-right: 6px !important;
+        max-width: 598px;
+        width: 100%;
+      }
+      .el-input__wrapper {
+        border-radius: 10px;
+        box-shadow: 0 0 0 1px $GrayB7 inset;
+        .el-input__prefix,
+        .el-input__suffix {
+          svg {
+            height: 24px;
+
+            @media (max-width: 768px) {
+              height: 15px;
+            }
+          }
+          .filter {
+            svg {
+              position: relative;
+              top: 5px;
+            }
+          }
+        }
+        .el-icon {
+          font-size: 24px;
+        }
+      }
+    }
+    .el-select {
+      max-width: unset !important;
+    }
+  }
+}
+
+.base-selction-table {
+  &.expanded {
+    .el-table__header {
+      tr {
+        position: relative;
+        th {
+          display: none;
+          &:last-child,
+          &:first-child,
+          &:nth-child(2) {
+            display: table-cell;
+          }
+          &:last-child {
+            position: absolute;
+            right: 10px;
+            .actions {
+              gap: 35px;
+              color: $PrimaryW1;
+              font-size: $MdSize;
+              position: relative;
+              top: 7px;
+              svg {
+                position: relative;
+                bottom: 3px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+ul.info-box {
+  .el-collapse {
+    --el-collapse-border-color: none !important;
+    --el-collapse-header-height: unset !important;
+    --el-collapse-header-bg-color: none !important;
+    --el-collapse-header-text-color: none !important;
+    --el-collapse-header-font-size: none !important;
+    --el-collapse-content-bg-color: none !important;
+    --el-collapse-content-font-size: none !important;
+    --el-collapse-content-text-color: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    .el-collapse-item__header {
+      transition: 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 16px;
+      &.is-active {
+        margin-bottom: 20px;
+      }
+    }
+    .el-collapse-item__content {
+      padding-bottom: 0;
+      li {
+        margin-bottom: 5px;
+      }
+    }
+    .title {
+      margin-left: 10px;
+    }
+    .el-collapse-item__arrow {
+      display: none;
+    }
+    path {
+      stroke: $PrimaryB1;
+    }
+    .icon {
+      transition: 0.3s all;
+    }
+  }
+}
+
+.y-pagination {
+  display: flex;
+  padding: 7px;
+  background-color: $GrayB8;
+
+  font-size: 12px;
+  height: 40px;
+  line-height: 22px;
+  border-radius: 10px;
+  padding-left: 1rem;
+  padding-right: 2rem;
+  &-select {
+    width: 100px;
+    margin-right: 15px;
+    border-radius: 3px;
+    border: 2px solid $GrayB7;
+    height: 24px;
+    position: relative;
+    bottom: 0;
+    color: $GrayB2;
+    border-radius: 5px;
+    padding: 0 5px;
+  }
+  &-button {
+    filter: grayscale(100%);
+    cursor: pointer;
+    background-color: #fbfbfb;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin: 0 3px;
+    &--disabled {
+      cursor: default;
+      opacity: 0.5;
+    }
+  }
+  &-input-container {
+    font-size: 12px;
+    margin: 0 15px;
+  }
+  &-text {
+    font-weight: 400;
+    font-size: $SmSize;
+    line-height: 20px;
+    color: $GrayB2;
+  }
+  .y-pagination-input-container {
+    .el-pagination {
+      height: 100%;
+      button {
+        background-color: #dbdbdb;
+        border-radius: 4px;
+        min-width: 0;
+        height: 24px;
+        width: 24px;
+        margin: 0 20px;
+        &:disabled {
+          background: transparent !important;
+        }
+        .el-icon {
+          text-align: center;
+        }
+      }
+      .el-pager li {
+        background-color: transparent;
+        border-radius: 4px;
+        margin: 0 10px;
+        min-width: 0;
+        &.is-active {
+          color: $GrayB10;
+          cursor: default;
+          font-weight: 700;
+          background-color: $PrimaryW1;
+          height: 24px;
+          width: 24px;
+        }
+      }
+    }
+  }
+  .rows {
+    margin-left: 2rem;
+    span {
+      font-size: $SmSize;
+      color: $GrayB2;
+    }
+  }
+  @media (max-width: 768px) {
+    font-size: 10px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    &-select {
+      width: 50px;
+      margin-right: 0;
+      font-size: 12px;
+    }
+    &-text {
+      font-size: 12px;
+    }
+    .y-pagination-input-container {
+      .el-pagination {
+        button {
+          margin: 0 5px;
+          font-size: 12px;
+        }
+        .el-pager li {
+          font-size: 12px;
+          margin: 0 5px;
+        }
+      }
+    }
+
+    .rows {
+      margin-left: 0.5rem;
+      span {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+.radio-button-group {
+  flex-direction: row;
+  padding-top: 0;
+  .el-radio-button__inner {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: $PrimaryW1;
+    background-color: $GrayB8;
+    border: none;
+    border-radius: 6px !important;
+    border: none !important;
+  }
+  .is-active {
+    .el-radio-button__inner {
+      color: $PrimaryW1 !important;
+      background-color: $GrayB8 !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+.action-bar-table button {
+  width: auto !important;
+  padding: 0 30px !important;
+  @media (max-width: 768px) {
+    font-size: 12px;
+    padding: 5px !important;
+    min-width: fit-content;
+  }
+}
+.large-dialog {
+  max-width: 901px !important;
+  width: 95% !important;
+}
+.el-upload-dragger {
+  max-width: 393px;
+  height: 42px;
+  width: calc(100% - 32px);
+  padding: 0 !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  border: 1.5px solid $GrayB7 !important;
+  color: $GrayB5;
+  margin: 0;
+  padding-right: 10px !important;
+  border-radius: 10px !important;
+  @media (max-width: 768px) {
+    font-size: 10px;
+    width: 100%;
+  }
+  .divider {
+    height: 42px;
+    width: 1.5px;
+    background-color: $GrayB7;
+  }
+  .upload-btn {
+    border: none;
+    color: $PrimaryW1 !important;
+    padding: 20px 25px !important;
+    border-radius: 10px !important;
+    font-size: $MdSize;
+    @media (max-width: 768px) {
+      font-size: 10px;
+      svg {
+        height: 15px;
+      }
+    }
+  }
+}
+
+.reponsive-table {
+  overflow-x: auto;
+  margin-bottom: 30px;
+  &::-webkit-scrollbar {
+    height: 4px;
+    background-color: $GrayB7;
+    position: relative;
+    bottom: 15px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #c2c2c2;
+    position: relative;
+    bottom: 15px;
+  }
+}
+
+.el-dialog__body {
+  max-height: 380px;
+  overflow-y: auto;
+  overflow-x: clip;
+  height: 380px;
+  &::-webkit-scrollbar-track {
+    background: none;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    background-color: $GrayB7;
+    position: relative;
+    right: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px $GrayB7;
+    background-color: #555;
+  }
+  @media (max-width: 768px) {
+    padding-top: 0;
+    padding-bottom: 0;
+    max-height: 280px;
+  }
+}
+
+.upload-demo {
+  padding-top: 1rem;
+}
+
+.actions {
+  svg {
+    position: relative;
+    // bottom: 2px;
+    right: 5px;
+    height: 17px;
+    width: 17px;
+  }
+  .divider {
+    height: 20px;
+    width: 2px;
+    background-color: #e5e5e5;
+  }
+}
+
+// .el-radio-button__original-radio:checked + .el-radio-button__inner {
+//   background-color: $PrimaryW1 !important;
+//   color: $GrayB10 !important;
+// }
+
+.el-select-dropdown__item.selected {
+  color: $PrimaryW1 !important;
+}
+.el-menu-item-group__title {
+  padding: 0 !important;
+}
+.contact-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  button {
+    margin-top: 40px;
+    background: #116dff;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    height: 42px;
+    min-width: 160px;
+    text-align: center;
+  }
+}
+.el-dropdown-menu {
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+  li {
+    padding: 10px !important;
+    padding-right: 20px !important;
+    padding: 0;
+    text-align: left;
+    align-items: center;
+    gap: 12px;
+    color: $GrayB2;
+    svg {
+      height: 20px;
+      width: 20px;
+      position: relative;
+      bottom: 3px;
+    }
+    &:hover {
+      background: none !important;
+      color: $GrayB2 !important;
+    }
+  }
+}
+.large-dialog {
+  max-width: 1400px !important;
+  width: 100%;
+}
+.el-radio-button__inner {
+  font-size: $SmSize !important;
+  height: 42px;
+}
+h4.label {
+  font-weight: 600 !important;
+  font-size: $LgSize !important;
+  padding: 16px 0 !important;
+  color: $GrayB2 !important;
+  margin: 0 !important;
+}
+p.label {
+  margin-top: 0 !important;
+}
+.information-item {
+  border-bottom: 1px solid $GrayB7;
+  height: 52px;
+  span {
+    font-weight: 500;
+    font-size: $SmSize;
+    line-height: 20px;
+    color: $GrayB2;
+  }
+}
+.seccess-item {
+  color: $SuccessB4;
+  font-weight: 500;
+  font-size: $SmSize;
+  line-height: 20px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  &::before {
+    content: "";
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    background-color: $SuccessB4;
+  }
+}
+.large-modal {
+  max-width: 1017px !important;
+  width: 100%;
+  .form-item {
+    input {
+      max-width: calc(393px - 35px) !important;
+      width: 100% !important;
+      margin-right: 12px;
+    }
+  }
+}
+
+.no-data {
+  height: 54px;
+  background: $GrayB8;
+  border-radius: 10px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.show-more {
+  font-size: $SmSize;
+  color: $PrimaryW1;
+  margin-top: 5px;
+}
+
+.hourly-label {
+  font-weight: 500 !important;
+  font-size: $MdSize !important;
+  line-height: 20px !important;
+  color: $GrayB2 !important;
+  padding-left: 28px;
+}

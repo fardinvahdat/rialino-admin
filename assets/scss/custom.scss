@@ -1,0 +1,251 @@
+
+    @font-face {
+        font-family: 'BYekan';
+        src: url('../fonts/BYekan.ttf') format('ttf');
+    }
+    @font-face {
+        font-family: 'IRANSans';
+        src:  url('../fonts/IRANSans.woff2') format('woff2'),
+        url('../fonts/IRANSans.woff') format('woff'),
+        url('../fonts/IRANSans.ttf') format('ttf')
+    }
+:root {
+  --el-color-primary: #116dff !important;
+  --el-border-radius-base: 10px !important;
+}
+*{
+  text-align: right;
+  direction: rtl;
+  font-family: "IRANSans" !important
+}
+.buy-package-dialog {
+  h3.header,
+  .el-dialog__footer {
+    @apply p-4;
+  }
+  .el-dialog__body {
+    @apply h-auto px-4;
+  }
+}
+/* start custom ElSegmented */
+.custom-ElSegmented.el-segmented {
+  --el-segmented-item-selected-color: rgba(255, 255, 255, 1);
+  --el-segmented-item-selected-bg-color: rgba(14, 87, 204, 1);
+  --el-border-radius-base: 8px;
+  --el-segmented-padding: 4px;
+  --el-segmented-bg-color: rgba(237, 244, 255, 1);
+  --el-segmented-color: rgba(0, 0, 0, 1);
+
+  &--large {
+    --el-segmented-padding: 8px;
+    min-height: 53px;
+  }
+}
+.custom-ElSegmented.el-segmented--large .el-segmented__group {
+  gap: 0.75rem;
+}
+.custom-ElSegmented.el-segmented--large .el-segmented__item {
+  padding: 0 1.5rem;
+}
+/* end custom ElSegmented */
+
+/*start custom ElUpload*/
+.custom-ElUpload {
+  .el-upload-dragger {
+    @apply h-auto flex flex-col;
+  }
+}
+/*end custom ElUpload*/
+
+// ------------- flow -------------
+.flow {
+  .vue-flow__handle {
+    @apply w-4 h-4;
+    &[data-handleid="handler-right"] {
+      @apply bg-error-500;
+      &:after {
+        content: "";
+        background-image: url("/images/automation/close.svg");
+        background-size: 100% 100%;
+        @apply absolute -left-0.5 -top-1 w-8 h-8;
+      }
+    }
+    &[data-handleid="handler-left"] {
+      @apply bg-success-500;
+      &:after {
+        content: "";
+        background-image: url("/images/automation/confirm.svg");
+        background-size: 100% 100%;
+        @apply absolute -left-0.5 -top-1 w-8 h-8;
+      }
+    }
+    &[data-handleid="handler-top"] {
+      &:after {
+        content: "";
+        background-image: url("/images/automation/port.svg");
+        background-size: 100% 100%;
+        @apply absolute -left-0.5 -top-1 w-8 h-8;
+      }
+      &.close:after {
+        background-image: url("/images/automation/hightlight.svg");
+      }
+    }
+    &[data-handleid="handler-bottom"] {
+      &:after {
+        content: "";
+        background-image: url("/images/automation/input.svg");
+        background-size: 100% 100%;
+        @apply absolute -left-1 -top-1 w-6 h-6;
+      }
+    }
+    &.handler-bottom-branch {
+      counter-increment: line-number;
+      left: calc(10% - counter(line-number));
+      &:after {
+        content: counter(line-number);
+        @apply absolute -left-1 -top-1 w-6 h-6 text-success-500 bg-light border border-success-500 rounded-full text-sm text-center flex items-center justify-center font-bold;
+      }
+    }
+  }
+  counter-reset: line-number;
+}
+// ----------- dialog ------------
+.base-dialog {
+  @apply bg-primary-200;
+  .footer {
+    .cancel-btn {
+      background: #f2f2f2;
+      color: #116dff;
+      font-weight: 500;
+    }
+    .ok-btn {
+      background: #116dff;
+      color: #ffffff;
+      min-width: 160px;
+      text-align: center;
+    }
+    button {
+      height: 42px;
+      border: none;
+    }
+  }
+}
+// ------------------- context menu ------------
+.mx-context-menu {
+  .mx-context-menu-item {
+    .label {
+      @apply text-gray-900 #{!important};
+    }
+    &.disabled {
+      .label,
+      svg {
+        @apply opacity-50;
+      }
+    }
+  }
+}
+// loading
+
+.loading-as-text {
+  width: fit-content;
+  font-weight: bold;
+  clip-path: inset(0 1ch 0 0);
+  animation: l4 1s steps(4) infinite;
+}
+.loading-as-text:before {
+  content: "Loading...";
+}
+@keyframes l4 {
+  to {
+    clip-path: inset(0 -1ch 0 0);
+  }
+}
+
+.el-form-item__error{
+  @apply text-right
+}
+
+.base-table {
+  thead {
+    display: table-header-group;
+    @media (max-width: 850px) {
+      display: none;
+    }
+    tr {
+      @apply border-b-0  #{!important};
+      th {
+        @apply px-2 pt-2 pb-2 text-Gray-b3 dark:text-LightGray-b4 font-normal text-center text-xs;
+      }
+    }
+  }
+  tbody {
+    tr {
+      @media (max-width: 850px) {
+        @apply flex flex-col;
+      }
+      &:nth-child(2n){ 
+          td {
+            @apply md:bg-Gray-b4 md:bg-opacity-40;
+            &:first-child{
+              @apply rounded-r-lg
+            }
+            &:last-child{
+              @apply rounded-l-lg
+            }
+          }
+      }
+      td {
+        @apply md:px-2 px-[10px] pt-5 pb-4 text-sm text-Gray-b1 dark:text-LightGray-b5   font-medium text-center;
+        @media (max-width: 850px) {
+          @apply w-full flex justify-between;
+          &:not(:not([data-label])):before {
+            align-items: center;
+            content: attr(data-label);
+            display: flex;
+            word-break: normal;
+          }
+        }
+      }
+      @media (max-width: 850px) {
+        &:nth-child(2n + 1) {
+          td {
+            @apply bg-Gray-b4 bg-opacity-20;
+            &:first-child {
+              @apply rounded-t-lg;
+            }
+            &:last-child {
+              @apply rounded-b-lg;
+            }
+          }
+        }
+      }
+      &:hover {
+        td {
+          @apply bg-Gray-b4 bg-opacity-20;
+          &:first-child {
+            @apply rounded-r-xl;
+            @media (max-width: 850px) {
+              @apply rounded-t-xl rounded-b-none;
+            }
+          }
+          &:last-child {
+            @apply rounded-l-xl;
+            @media (max-width: 850px) {
+              @apply rounded-b-xl rounded-t-none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.el-sub-menu .el-sub-menu__icon-arrow{
+  right:unset !important;
+  left:20px;
+}
+.el-menu:not(.el-menu--collapse) .el-sub-menu__title{
+  padding: 0 20px;
+}
+.el-menu:not(.el-menu--collapse) .el-sub-menu__title{
+  padding-right: 20px !important;
+}

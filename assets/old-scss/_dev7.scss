@@ -1,0 +1,28 @@
+
+.form-item {
+  label {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: #999999;
+    display: block;
+    margin-bottom: 8px;
+  }
+}
+
+.filter-btn-table {
+  margin-bottom: 15px !important;
+  button {
+    min-width: 80px !important;
+    width: auto !important;
+    padding: 0 !important;
+  }
+}
+
+
+.date-picker-financial {
+  //.el-input__wrapper{
+  width: 140px !important;
+  margin-right: 10px;
+  //}
+}

@@ -1,0 +1,10 @@
+{
+    "users":"کاربران",
+    "total_user":"تعداد کاربران (کل)",
+    "total_user_today":"تعداد کاربران (امروز) ",
+    "searchs":"جستجو ها",
+    "total_search":"تعداد جستجو (کل)",
+    "total_search_today":"تعداد جستجو (امروز) ",
+    "total_search_month":"تعداد جستجو (ماه) ",
+    "total_search_request":"تعداد درخواست های جستجو"
+}
