@@ -1,5 +1,5 @@
 <template>
-    <div class="no-data w-100">There are no {{ props.name }} available</div>
+    <div class="no-data w-100 md:text-base text-sm">دیتا ثبت شده ای وجود ندارد!</div>
 </template>
 
 <script setup>

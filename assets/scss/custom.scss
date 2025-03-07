@@ -195,7 +195,7 @@
           }
       }
       td {
-        @apply md:px-2 px-[10px] pt-5 pb-4 text-sm text-Gray-b1 dark:text-LightGray-b5   font-medium text-center;
+        @apply md:px-2 px-[10px] pt-5 pb-4 md:text-sm text-xs text-Gray-b1 dark:text-LightGray-b5   font-medium text-center;
         @media (max-width: 850px) {
           @apply w-full flex justify-between;
           &:not(:not([data-label])):before {

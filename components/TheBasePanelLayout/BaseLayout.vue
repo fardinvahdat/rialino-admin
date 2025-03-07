@@ -4,7 +4,7 @@
             <div class="breadcrumbs col-12 !flex justify-start flex-row-reverse !w-full" :key="counter">
                 <el-skeleton style="width: 20%; display: flex;" :rows="1" :loading="isLoading" animated>
 
-                    <span v-for="(breadcrumb, index) in breadcrumbs" :key="index" class="breadcrumb !flex flex-row-reverse">{{
+                    <span v-for="(breadcrumb, index) in breadcrumbs" :key="index" class="breadcrumb !flex flex-row-reverse items-center">{{
         breadcrumb.title }}
                         <Icon name="arrow-right" v-if="isArrowAllowed(index)" />
                     </span>

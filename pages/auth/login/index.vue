@@ -16,11 +16,11 @@
                 </h1>
             </section>
         </section>
-        <section class="md:col-span-2 lg:col-span-3 flex items-center justify-center">
-            <section class="max-w-[600px] md:min-w-[500px]">
+        <section class="md:col-span-2 lg:col-span-3 px-2 flex items-center justify-center">
+            <section class="max-w-[600px] md:min-w-[500px] w-full">
                 <section class="container">
-                    <h1 class="text-3xl font-black text-right">{{ t('login') }}</h1>
-                    <p class="mt-2 font-normal text-sm text-right"> {{ t('do_not_have_an_account') }}
+                    <h1 class="xl:text-3xl lg:text-2xl text-lg font-black text-right">{{ t('login') }}</h1>
+                    <p class="mt-2 font-normal text-xs text-right"> {{ t('do_not_have_an_account') }}
                         <a href="javascript:void(0)" class="text-primary-b1 hover-animation">{{ t('register') }} </a>
                     </p>
                     <form class="space-y-4" @submit.prevent="handleLogin">
@@ -33,7 +33,7 @@
                                     </label>
                                     <el-form-item v-bind="emailProps">
                                         <input
-                                            class="w-full rounded-lg border-[1px] border-black border-solid outline-none px-2 h-10 text-right"
+                                            class="w-full rounded-lg border-[1px] border-black border-solid outline-none px-2 h-10 text-right md:text-base text-sm"
                                             :placeholder="t('email')" type="email" v-model="email" />
                                     </el-form-item>
                                 </div>
@@ -44,7 +44,7 @@
                                     </label>
                                     <el-form-item v-bind="passwordProps">
                                         <input
-                                            class="w-full rounded-lg border-[1px] border-black border-solid outline-none px-2 h-10 text-right"
+                                            class="w-full rounded-lg border-[1px] border-black border-solid outline-none px-2 h-10 text-right md:text-base text-sm"
                                             :placeholder="t('password')" type="password" v-model="password" />
                                     </el-form-item>
                                 </div>

@@ -13,12 +13,12 @@
                             <span :key="counter" class="flex w-full">
                                 <Icon :name="menuItem.icon" />
                                 <span class="font-normal sm:font-medium text-xs sm:text-sm lg:text-base ">{{
-        menuItem.title }}</span>
+                                    menuItem.title }}</span>
                             </span>
                         </template>
                         <el-menu-item-group>
                             <template v-for="(subMenuItem, subMenuIndex) in menuItem.children" :key="subMenuIndex">
-                                <NuxtLink :to="subMenuItem.route">
+                                <NuxtLink :to="subMenuItem.route" @click="handleCollapse">
                                     <el-menu-item :index="index + 1 + ' - ' + (subMenuIndex + 1)"
                                         class="ferr !font-normal !sm:font-medium !text-xs sm:!text-sm !lg:text-base">
                                         <span class="circle"></span>
@@ -29,7 +29,8 @@
                         </el-menu-item-group>
                     </el-sub-menu>
                     <el-menu-item :index="index + 1 + ''" v-if="!menuItem.children.length" class="far">
-                        <NuxtLink :to="menuItem.route" class="w-full h-full flex items-center gap-2">
+                        <NuxtLink :to="menuItem.route" @click="handleCollapse"
+                            class="w-full h-full flex items-center gap-2">
                             <Icon :name="menuItem.icon" />
                             <span class="font-normal sm:font-medium text-xs sm:text-sm lg:text-base">{{ menuItem.title
                                 }}</span>
